@@ -4,12 +4,16 @@
     const margin = { top: 5, right: 5, bottom: 5, left: 5 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
+    const size = 40;
+    const cx = innerWidth/2;
+    const cy = innerHeight/2;
+
   </script>
   
   <svg {width} {height}>
     <g transform="translate({margin.left}, {margin.top})">
-      <rect x=25 y=25 width=40 height=40 />
-      (<circle cx=65 cy=65 r=20 />) 
+      <rect x={cx-size/2} y={cy-size/2} width=40 height=40 fill="yellow"/>
+      (<circle cx={cx+size/2} cy={cy+size/2} r=20 fill="skyblue"/>) 
     </g>
   </svg>
   
@@ -17,12 +21,6 @@
     svg {
       border: 1px solid black;
       border-radius: 5px;
-    }
-    rect {
-      fill: yellow;
-    }
-    circle {
-      fill: skyblue;
     }
   </style>
   
