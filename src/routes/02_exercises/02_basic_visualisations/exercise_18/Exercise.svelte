@@ -5,7 +5,7 @@
   import { select } from "d3-selection";
   const width = 800;
   const height = 100;
-  const margin = { top: 5, right: 5, bottom: 5, left: 5 };
+  const margin = { top: 5, right: 5, bottom: 25, left: 5 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   const scale = scaleLog() .domain([1, 10]) .range([0, innerWidth]);
