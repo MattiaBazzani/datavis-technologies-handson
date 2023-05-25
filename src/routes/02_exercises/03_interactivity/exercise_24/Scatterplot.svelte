@@ -5,23 +5,19 @@
   import { axisBottom, axisLeft } from "d3-axis";
   import { schemeTableau10 } from "d3-scale-chromatic";
   import { scaleLog, scaleLinear, scaleOrdinal } from "d3-scale";
-
   // Properties
   export let data = [];
   const continents = ["europe", "asia", "americas", "africa"];
-
   // Dimensions
   const [height, width] = [400, 550];
   const margin = { top: 50, right: 5, bottom: 55, left: 50 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
-
   // Scales
   const xScale = scaleLog().domain([300, 150000]).range([0, innerWidth]);
   const yScale = scaleLinear().domain([0, 90]).range([innerHeight, 0]);
   const rScale = scaleLinear().range([5, 40]).domain([2000, 1400000000]);
   const cScale = scaleOrdinal(schemeTableau10).domain(continents);
-
   // Axes
   const xAxis = (node) =>
     axisBottom(xScale).tickValues([400, 4000, 40000]).tickFormat(format("$"))(
